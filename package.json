@@ -1,6 +1,6 @@
 {
-  "name": "astra-edges",
-  "version": "0.0.0",
+  "name": "llama-api",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "deploy": "wrangler deploy",
@@ -9,10 +9,12 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@cloudflare/vitest-pool-workers": "^0.1.0",
-    "@cloudflare/workers-types": "^4.20240314.0",
-    "typescript": "^5.0.4",
-    "vitest": "1.3.0",
-    "wrangler": "^3.0.0"
+    "@cloudflare/vitest-pool-workers": "^0.4.16",
+    "@cloudflare/workers-types": "^4.20240725.0",
+    "@vitest/runner": "1.5",
+    "@vitest/snapshot": "1.5",
+    "typescript": "^5.5.4",
+    "vitest": "1.5.3",
+    "wrangler": "^3.67.1"
   }
 }

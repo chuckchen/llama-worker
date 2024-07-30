@@ -1,4 +1,4 @@
-name = "astra-edges"
+name = "llama-api"
 main = "src/index.ts"
 compatibility_date = "2024-03-14"
 compatibility_flags = ["nodejs_compat"]
@@ -50,3 +50,6 @@ compatibility_flags = ["nodejs_compat"]
 # [[migrations]]
 # tag = "v1"
 # new_classes = ["MyDurableObject"]
+
+[ai]
+binding = "AI"
