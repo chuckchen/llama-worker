@@ -1,20 +1,24 @@
 {
-  "name": "llama-api",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "deploy": "wrangler deploy",
-    "dev": "wrangler dev",
-    "start": "wrangler dev",
-    "test": "vitest"
-  },
-  "devDependencies": {
-    "@cloudflare/vitest-pool-workers": "^0.4.16",
-    "@cloudflare/workers-types": "^4.20240725.0",
-    "@vitest/runner": "1.5",
-    "@vitest/snapshot": "1.5",
-    "typescript": "^5.5.4",
-    "vitest": "1.5.3",
-    "wrangler": "^3.67.1"
-  }
+	"name": "llama-api",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev",
+		"start": "wrangler dev",
+		"test": "vitest",
+		"cf-typegen": "pnpm exec wrangler types"
+	},
+	"devDependencies": {
+		"@cloudflare/vitest-pool-workers": "0.5.2",
+		"@cloudflare/workers-types": "^4.20240924.0",
+		"@vitest/runner": "~2.0.5",
+		"@vitest/snapshot": "~2.0.5",
+		"typescript": "^5.6.2",
+		"vitest": "~2.0.5",
+		"wrangler": "^3.78.8"
+	},
+	"dependencies": {
+		"hono": "^4.6.3"
+	}
 }
