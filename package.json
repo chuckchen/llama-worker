@@ -2,6 +2,7 @@
 	"name": "llama-api",
 	"version": "0.1.0",
 	"private": true,
+	"packageManager": "pnpm@9.10.0",
 	"scripts": {
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev",
