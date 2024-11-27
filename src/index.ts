@@ -1,5 +1,5 @@
 import { Hono } from 'hono';
-import { stream, streamText, streamSSE } from 'hono/streaming';
+import { streamSSE } from 'hono/streaming';
 
 const app = new Hono<{ Bindings: Env }>();
 
@@ -17,7 +17,11 @@ app.post('/v1/chat/completions', async (c) =>
 	streamSSE(c, async (stream) => {
 		const { model, messages } = await c.req.json();
 
-		const chatStream = await c.env.AI.run('@cf/meta/llama-3.1-8b-instruct', { messages: messages ?? defaultMessage, stream: true });
+		const chatStream = await c.env.AI.run(
+			model || '@cf/meta/llama-3.1-8b-instruct',
+			{ messages: messages || defaultMessage, stream: true },
+			{ gateway: { id: c.env.AI_GATEWAY_ID, skipCache: false, cacheTtl: 3360 } }
+		);
 
 		await stream.pipe(chatStream as ReadableStream);
 	})
